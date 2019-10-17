@@ -20,5 +20,12 @@ import requests
 
 source = requests.get('https://medium.com').text
 soup = BeautifulSoup(source, 'lxml')
-article = soup.find('article')
-print(article.prettify())
+
+for article in soup.find_all('article'):
+    print(article.text)
+    #print(article.prettify())
+    # headline = article.h1.text
+    # author = article.div.text
+    # print(headline)
+    # print(author)
+    print()
