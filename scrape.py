@@ -18,14 +18,18 @@ import requests
 # print(summary)
 
 
-source = requests.get('https://medium.com').text
+source = requests.get('https://medium.com').text #.text makes it equal to the html in doc
 soup = BeautifulSoup(source, 'lxml')
 
-for article in soup.find_all('article'):
-    print(article.text)
-    #print(article.prettify())
-    # headline = article.h1.text
-    # author = article.div.text
-    # print(headline)
-    # print(author)
-    print()
+article = soup.find('article')
+print(article.prettify())
+print()
+
+headline = article.h1.text
+print(' ~ ~ ' + headline)
+author = article.find('a', class_="ds-link ds-link--styleSubtle postMetaInline postMetaInline--author").text
+time = article.find('span', class_="readingTime")['title']
+print('By: ' + author + '   ' + time)
+summary = article.find('div', class_="ui-summary ui-clamp3").text
+print(summary)
+print()
