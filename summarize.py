@@ -7,19 +7,15 @@ import nltk
 # url_list = [uz]
 
 #nltk.download('punkt')
-article_list = []
+
 url = 'https://medium.com/@jeric.hunter/bartornot-a3030fb819b5'
- 
-article_list.append(url)
 
-
-for item in article_list:
-    article = Article(url)
-    article.download()
-    article.parse()
-    article.nlp()
-    print()
-    print(article.authors)
-    print(article.publish_date)
-    print(article.keywords)
-    print(article.summary)
+article = Article(url)
+print(article)
+article.download()
+article.parse()
+article.nlp()
+print(article.authors)
+print(article.publish_date)
+print(article.keywords)
+print(article.summary)

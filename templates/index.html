@@ -6,23 +6,19 @@
 <br>
 <center>New Article</center>
 
+<form action="/updated" method="POST">
 <center>
 URL: <input type="text" name="url">
 <br>
 <button type="submit" class="btn btn-warning">Submit</button>
 </center>
-
+</form>
 
 <ol>
-    {% for site in sites %}
+    {% for index in range(article_list | length)%}
 
     <li>
-        <br>
-        <a href="/site/{{site._id}}">{{site.name}}</a>
-        <a href="/edit/{{site._id}}" class="btn btn-info">Edit</a>
-        <form action="/delete/{{site._id}}" method="POST"></form>
-            <button type="submit" class="btn btn-danger">Delete</button>
-        <br>
+        <p>{{article_list[index]}}</p>
     </li>
 
     {% endfor %}
