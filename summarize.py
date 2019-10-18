@@ -7,7 +7,9 @@ import nltk
 # url_list = [uz]
 
 #nltk.download('punkt')
-url = 'https://medium.com/'
+article_list = []
+url = 'https://medium.com/@jeric.hunter/bartornot-a3030fb819b5'
+ 
 article_list.append(url)
 
 

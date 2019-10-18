@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<br>
+<a href="/" class="btn btn-secondary">Home</a>
+<br>
+<h1>Edit Site Posting</h1>
+
+<form action="/edit/{{suit._id}}" method="POST">
+    <br>
+    SUIT NAME: <input type="text" name="name" value="{{suit.name}}"><br>
+    <br>
+    SUIT PRICE: <input type="number" name="price" value="{{suit.price}}"><br>
+    <br>
+    IMG URL: <input type="text" name="img_url" value="{{suit.img_url}}"><br>
+    <br>
+    IMG FILE: <input type="image" name="img_file" value={{suit.img_file}}><br>
+    <br>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
+
+{% endblock %}

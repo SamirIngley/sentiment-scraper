@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<br>
+<a href="/" class="btn btn-secondary">Home</a>
+<br>
+<center><h1>New Site</h1><center>
+
+<form action="/new" method="POST">
+    <br>
+    <br>
+    NAME: <input type="text" name="name"><br>
+    <br>
+    PRICE: <input type="number" name="price"><br>
+    <br>
+    IMG URL: <input type="text" name="img_url"><br>
+    <br>
+    <button type="submit" class="btn btn-warning">Submit</button>
+</form>
+
+{% endblock %}
