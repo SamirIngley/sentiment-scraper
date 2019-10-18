@@ -16,6 +16,7 @@ for article in articles:
     print(headline.text)
     author = article.find('span', class_="bt b bu bv bw bx ap as es ep eq ar am ax")
     time = article.find('div', class_="gg t cv")
-    print('     ' + author.text + '       ' + time.text)
+    print(author.text + '                     ' + time.text)
     summary = article.find('h3', class_="bt fm fn fo as fp ep ap eq ar by")
     print(summary.text)
+    print()
