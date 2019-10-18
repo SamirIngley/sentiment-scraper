@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-source = requests.get('https://medium.com/topic/editors-picks').content
+source = requests.get('https://medium.com').content
 soup = BeautifulSoup(source, 'lxml')
 #print(soup.prettify())
 
