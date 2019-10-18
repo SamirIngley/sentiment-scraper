@@ -14,14 +14,16 @@ URL: <input type="text" name="url">
 </center>
 </form>
 
-<ol>
-    {% for index in range(article_list | length)%}
 
-    <li>
+
+{% for index in range(article_list | length)%}
+
+    <ol>
         <p>{{article_list[index]}}</p>
-    </li>
+    </ol>
+    <a href="/delete" class="btn btn-secondary">Delete</a>
+    <a href="/edit" class="btn btn-secondary">Edit</a>
 
-    {% endfor %}
-</ol>
+{% endfor %}
 
 {% endblock %}
