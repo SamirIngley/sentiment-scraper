@@ -18,18 +18,34 @@ import requests
 # print(summary)
 
 
-source = requests.get('https://medium.com').text #.text makes it equal to the html in doc
+source = requests.get('https://medium.com/topic/editors-picks').content
 soup = BeautifulSoup(source, 'lxml')
+#print(soup.prettify())
 
-article = soup.find('article')
-print(article.prettify())
-print()
+# with open('index2.html', 'w') as out:
+#     out.write(soup.prettify())
 
-headline = article.h1.text
-print(' ~ ~ ' + headline)
-author = article.find('a', class_="ds-link ds-link--styleSubtle postMetaInline postMetaInline--author").text
-time = article.find('span', class_="readingTime")['title']
-print('By: ' + author + '   ' + time)
-summary = article.find('div', class_="ui-summary ui-clamp3").text
-print(summary)
-print()
+article_list = soup.select('h3') # list of articles
+for article in article_list:
+    print(article.text)
+#print(article_list.text)
+
+# for article in article_list:
+#     print(article.title)
+#     print(article.)
+#     print(article.text)
+#     # try:
+#     headline = article.find_all('h3').text
+#     # except Exception as e:
+#     #     headline = article.h2.text
+#
+#     # author = article.find('a', class_="ds-link ds-link--styleSubtle postMetaInline postMetaInline--author").text
+#     # time = article.find('span', class_="readingTime")['title']
+#     # summary = article.find('div', class_="ui-summary ui-clamp3").text
+#     # link = article.find()
+#
+#     print(headline)
+#     # print('By: ' + author + '   ' + time)
+#     # print(summary)
+#
+#     print()
